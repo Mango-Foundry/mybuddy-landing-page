@@ -54,6 +54,33 @@
                 /* Ensures the image covers the entire screen without distortion */
                 object-position: top;
             }
+
+            .privacy-policy p {
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                line-height: 1.6;
+                color: #4a5568; /* gray-700 */
+            }
+
+            .privacy-policy h3 {
+                font-size: 1.25rem; /* text-xl */
+                font-weight: bold;
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                color: #2d3748; /* gray-800 */
+            }
+
+            .privacy-policy ul {
+                list-style-type: disc;
+                margin-left: 2rem;
+                margin-bottom: 1rem;
+                color: #4a5568; /* gray-700 */
+            }
+
+            .privacy-policy a {
+                color: #dd6b20; /* orange-600 */
+                text-decoration: underline;
+            }
         </style>
     </head>
     <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-8">
@@ -153,33 +180,56 @@
             </div>
         </section>
     
-        <!-- App Story Section -->
+        <!-- Privacy Policy Section -->
         <section class="container max-w-4xl mx-auto mt-24 text-center">
             <h2 class="text-3xl font-bold text-center text-gray-600 mb-12">
-                <span class="text-gray-600">The Story of </span> 
-                <span class="text-orange-600">myBuddy</span>
+                Privacy Policy
             </h2>
-
-
-            <div class="text-left max-w-3xl mx-auto">
-                <p class="text-lg text-gray-600 mb-4">
-                    <strong>I first arrived in Cambodia in 2022.</strong>  I was looking for a quiet place to learn to code, and maybe build my first app.  What I didn’t expect was how much this place, especially the animals, would shape that journey.
-                </p>
-                <p class="text-lg text-gray-600 mb-4">
-                    Like many first-time visitors, I found the dual-currency system confusing.  US dollars and Cambodian riel (KHR) are used side by side, and figuring out change in two currencies quickly became a daily puzzle.  I found myself fumbling through conversions in cafes, bars, and markets... and I noticed I wasn’t the only one.
-                </p>
-                <p class="text-lg text-gray-600 mb-4">
-                    That’s why I created myBuddy... The Travel App for Cambodia.  It started as a simple tool to help visitors understand and convert between USD, KHR, and a third currency of their choice.  But this is just the beginning.  There’s so much to discover in this wonderful country, and the goal is to keep adding features to myBuddy that make travel in Cambodia smoother, easier, and more enjoyable.
-                </p>
-                <p class="text-lg text-gray-600 mb-4">
-                    The app is named after Buddy, the first of several stray cats who found their way into my life here.  Since then, I’ve become more aware of the tough lives many street dogs and cats face across the country.  If myBuddy finds success, I hope to give back by supporting local animal welfare initiatives.
-                </p>
-                <p class="text-lg text-gray-600">
-                    This is my first published app.  I made it for first-time visitors to Cambodia and travelers like myself... curious about the country, slightly lost at first, but slowly exploring its wonders.
-                </p>
+            <div class="text-left max-w-3xl mx-auto privacy-policy">
+                <p><em>Last update: 22 November 2025</em></p>
+                <p>Thank you for using myBuddy (the "App"). Your privacy is important to us. This Privacy Policy explains what information we collect and how we use it.</p>
+                <h3>1. Information We Collect</h3>
+                <p>We collect information to improve our product for our users. This information includes usage patterns, device model, operating system version, app version and crash reports. This information is collected anonymously. We do <strong>not</strong> collect information that can be used to identify you.</p>
+                <h3>2. How We Use The Information</h3>
+                <p>We use&nbsp;<strong>Google's Firebase Analytics</strong>&nbsp;to help us understand how the App is used. This may include the screens or pages you view, and the currencies you select. The information we collect is used to improve the App’s performance and reliability, understand general usage patterns, and address technical issues.</p>
+                <h3>3. Crash Reports</h3>
+                <p>We use&nbsp;<strong>Google Firebase Crashlytics</strong>&nbsp;to help detect and fix technical issues. When a crash or error occurs, <strong>Firebase Crashlytics</strong> automatically collects diagnostic information such as:</p>
+                <ul>
+                    <li>Device model</li>
+                    <li>Operating system version</li>
+                    <li>App version</li>
+                    <li>Technical details about the error</li>
+                </ul>
+                <p>This helps us improve the App's performance and stability.</p>
+                <h3>4. Children’s Privacy</h3>
+                <p>Our App is <strong>not</strong> intended for children under 13. We do not knowingly collect personal information from children.</p>
+                <h3>5. Third-Party Services</h3>
+                <p>The App uses the following third-party services, <strong>Google Firebase Analytics, Google Firebase Crashlytics, Google Cloud API</strong>.&nbsp; These services may collect information as described in their own privacy policies. We encourage you to review them:</p>
+                <ul>
+                    <li>Firebase Privacy:&nbsp;<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">https://firebase.google.com/support/privacy</a></li>
+                    <li>Google Cloud Privacy:&nbsp;<a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">https://cloud.google.com/terms/cloud-privacy-notice</a></li>
+                </ul>
+                <h3>6. Changes to This Privacy Policy</h3>
+                <p>We may update this Privacy Policy from time to time. Updates will be reflected by the "Last updated" date at the top of this page.</p>
+                <h3>7. Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us at:&nbsp;<a id="contact-email"></a></p>
             </div>
         </section>
     
+        <script>
+            // Simple email obfuscation to protect from basic scrapers
+            (function() {
+                var user = 'mangofoundry.dev';
+                var domain = 'gmail.com';
+                var emailLink = document.getElementById('contact-email');
+                var email = user + '@' + domain;
+                emailLink.setAttribute('href', 'mailto:' + email);
+                
+                var strong = document.createElement('strong');
+                strong.textContent = email;
+                emailLink.appendChild(strong);
+            })();
+        </script>
     </body>
     </html>
 
