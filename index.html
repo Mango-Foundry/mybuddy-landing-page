@@ -1,199 +1,327 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>App Landing Page</title>
-        <!-- Load Tailwind CSS from a CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            /* Use the Inter font, which is a great modern choice */
-            body {
-                font-family: 'Poppins', sans-serif;
-            }
-    
-            /* Custom CSS to create the iPhone-like mockup with bezel and rounded corners */
-            .iphone-mockup {
-                width: 320px;
-                height: 640px;
-                background-color: #000;
-                border: 12px solid #000;
-                border-radius: 48px;
-                position: relative;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-                /* This shadow gives it a floating, 3D effect */
-            }
-    
-            .iphone-screen {
-                width: 100%;
-                height: 100%;
-                border-radius: 36px;
-                overflow: hidden;
-                background-color: #fff;
-                position: relative;
-            }
-    
-            /* .iphone-camera {
-                position: absolute;
-                top: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60px;
-                height: 20px;
-                background-color: #000;
-                border-radius: 10px;
-                z-index: 10;
-            } */
-    
-            /* The screenshot itself, filling the screen area */
-            .iphone-screenshot {
-                width: 100%;
-                height: 100%;
-                object-fit: fit;
-                /* Ensures the image covers the entire screen without distortion */
-                object-position: top;
-            }
 
-            .privacy-policy p {
-                margin-bottom: 1rem;
-                font-size: 1rem;
-                line-height: 1.6;
-                color: #4a5568; /* gray-700 */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myBuddy Cambodia - The Travel App</title>
+    <!-- Load Tailwind CSS from a CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#D95D37',
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                    }
+                }
             }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 
-            .privacy-policy h3 {
-                font-size: 1.25rem; /* text-xl */
-                font-weight: bold;
-                margin-top: 1.5rem;
-                margin-bottom: 0.5rem;
-                color: #2d3748; /* gray-800 */
-            }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+            /* text-gray-50 */
+            color: #1f2937;
+            /* text-gray-800 */
+        }
 
-            .privacy-policy ul {
-                list-style-type: disc;
-                margin-left: 2rem;
-                margin-bottom: 1rem;
-                color: #4a5568; /* gray-700 */
-            }
+        .iphone-mockup {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            background-color: #000;
+            border: 12px solid #000;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+        }
 
-            .privacy-policy a {
-                color: #dd6b20; /* orange-600 */
-                text-decoration: underline;
-            }
-        </style>
-    </head>
-    <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-8">
-        <main class="container max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-16">
-            <!-- Main Text content about the app -->
-            <div class="text-center md:text-left">
-                <!-- NEW: Flex container to hold the logo and the heading -->
-                <div class="flex items-center justify-center md:justify-start mb-2">
-                    <!-- 
-                        IMPORTANT: Replace 'path/to/your/logo.png' with the actual path to your logo image.
-                        You can adjust the width (w-16) and height (h-16) classes as needed.
-                    -->
-                    <img src="logo_images/myBuddy_paw_v1_3x.png" alt="myBuddy Cambodia Logo" class="w-20 h-20 mr-4">
-                    <h1 class="text-3xl md:text-5xl font-bold">
-                        <span class="text-orange-600">myBuddy</span>
-                        <span class="text-gray-500">Cambodia</span>
-                    </h1>
-                </div>
-                <h2 class="text-2xl md:text-3xl text-gray-500 font-bold mb-6"> The Travel App for Cambodia
+        .iphone-screen {
+            width: 100%;
+            height: auto;
+            border-radius: 28px;
+            overflow: hidden;
+            background-color: #fff;
+            position: relative;
+        }
 
-                </h2>
-                <p class="text-lg text-gray-600 mb-6 max-w-md">
-                    A simple travel tool to help you navigate the dual-currency system in Cambodia, giving you peace of mind. 
-                </p>
-                <!-- Call-to-action button, styled with Tailwind -->
-                <button class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
-                    Download on the App Store
-                </button>
+        .iphone-screenshot {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .privacy-policy p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        .privacy-policy h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .privacy-policy ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .privacy-policy a {
+            color: #D95D37;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Hero Section -->
+    <section
+        class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between xl:max-w-6xl">
+        <!-- Text content -->
+        <div class="md:w-1/2 text-center md:text-left mb-16 md:mb-0 pr-0 md:pr-12">
+
+            <!-- Logo and App Name -->
+            <div class="flex items-center justify-center md:justify-start space-x-4 mb-6 md:mb-8">
+                <img src="logo_images/myBuddy_paw_v1_3x.png" alt="myBuddy Cambodia Logo"
+                    class="w-20 h-20 md:w-[100px] md:h-[100px]">
+                <h1 class="text-4xl md:text-5xl font-nunito font-black tracking-tight">
+                    <span class="text-brand">myBuddy</span> <span class="text-gray-500">Cambodia</span>
+                </h1>
             </div>
-    
-            <!-- The main iPhone Mockup Container -->
-            <div class="iphone-mockup">
-                <!-- <div class="iphone-camera"></div> -->
+
+            <h2 class="text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight mb-6 text-gray-600">
+                The Travel App for <span class="text-brand">Cambodia</span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                A simple travel tool to help you navigate the dual-currency system in Cambodia, giving you peace of
+                mind.
+            </p>
+            <button
+                class="bg-brand text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-orange-700 transition duration-300 transform hover:-translate-y-1">
+                Download on the App Store
+            </button>
+        </div>
+
+        <!-- Main Mockup -->
+        <div class="md:w-1/2 flex justify-center w-full relative">
+            <div class="iphone-mockup max-w-[280px] md:max-w-[320px]">
                 <div class="iphone-screen">
-                    <!--
-                        IMPORTANT: Replace the 'src' value of the image below with your
-                        app screenshot's image URL.
-                    -->
-                    <img src="screenshots/conversion_screenshot_alt_a.png" alt="App Screenshot" class="iphone-screenshot">
+                    <img src="screenshots/conversion_screenshot_hero_image.png" alt="App Screenshot"
+                        class="iphone-screenshot">
                 </div>
             </div>
-        </main>
-    
-        <!-- App Screenshots Section -->
-        <section class="container max-w-4xl mx-auto mt-24">
-            <h2 class="text-3xl font-bold text-center text-gray-600 mb-12">Currency Tools</h2>
-            <div class="flex flex-col items-center md:flex-row md:justify-center md:items-end md:space-x-8 space-y-8 md:space-y-0">
+        </div>
+    </section>
 
+    <!-- The Problem & Solution Section -->
+    <section class="bg-white py-24 px-6 border-t border-gray-100">
+        <div class="container mx-auto xl:max-w-6xl">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+
+                <!-- Left Column: Context -->
+                <div
+                    class="lg:w-1/2 bg-brand bg-opacity-5 border border-brand border-opacity-20 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Money works a little differently in Cambodia...
+                    </h3>
+
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start text-gray-700">
+                            <svg class="w-6 h-6 text-gray-400 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg">Cambodia uses a dual-currency system: US dollars (USD) and Cambodian
+                                riel (KHR).</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <svg class="w-6 h-6 text-gray-400 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg">Prices may be shown in either currency or both.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <svg class="w-6 h-6 text-gray-400 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg">Payments can be made with dollars or riel, or a mix of both.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <svg class="w-6 h-6 text-gray-400 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg">Change is often given in both currencies.</span>
+                        </li>
+                    </ul>
+                    <p class="text-xl font-bold text-gray-800 leading-snug">
+                        For visitors, this often means converting between dollars, riel, and your own currency...
+                        sometimes all in the same transaction.
+                    </p>
+                </div>
+
+                <!-- Right Column: Solution -->
+                <div
+                    class="lg:w-1/2 bg-emerald-50 border border-emerald-200 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col">
+                    <h3 class="text-2xl font-bold text-brand mb-6">How this app helps...</h3>
+
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start text-gray-800">
+                            <svg class="w-6 h-6 text-brand mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg">Instantly convert between <strong>US dollar</strong>,
+                                <strong>Cambodian riel</strong> and <strong>your selected currency</strong>.</span>
+                        </li>
+                        <li class="flex items-start text-gray-800">
+                            <svg class="w-6 h-6 text-brand mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg">Includes <strong>common rate option</strong> used by many local shops
+                                and street vendors.</span>
+                        </li>
+                        <li class="flex items-start text-gray-800">
+                            <svg class="w-6 h-6 text-brand mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg"><strong>Works offline</strong>, wherever you are paying.</span>
+                        </li>
+                        <li class="flex items-start text-gray-800">
+                            <svg class="w-6 h-6 text-brand mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg"><strong>Learn the value of Cambodian notes</strong> in your own
+                                currency.</span>
+                        </li>
+                    </ul>
+                    <p class="text-xl font-bold text-gray-800 leading-snug">
+                        <span class="text-brand">myBuddy</span> is designed for real-world cash use in Cambodia...
+                        <br />easy to use, giving you confidence and peace of mind.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Screenshots Section -->
+    <section class="bg-gray-50 py-24 px-6 border-t border-gray-100">
+        <div class="container mx-auto xl:max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">Currency Tools</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                 <!-- First Mockup -->
                 <div class="flex flex-col items-center text-center">
-                    <h3 class="text-xl text-gray-700 mb-4">Convert between Cambodian riel, US Dollar and your own currency</h3>
-                    <div class="iphone-mockup w-64 h-auto">
-                        <div class="iphone-camera"></div>
+                    <div class="h-24 flex items-center justify-center mb-6 px-4">
+                        <h3 class="text-lg text-gray-700 font-medium leading-relaxed">Convert between riel, US Dollar
+                            and your own currency</h3>
+                    </div>
+                    <div class="iphone-mockup max-w-[240px]">
                         <div class="iphone-screen">
-                            <img src="screenshots/conversion_kb_screenshot_alt_a.png" alt="Real-time Conversion Screenshot" class="iphone-screenshot">
+                            <img src="screenshots/conversion_screenshot_alt_a.png" alt="Real-time Conversion Screenshot"
+                                class="iphone-screenshot">
                         </div>
                     </div>
                 </div>
 
                 <!-- Second Mockup -->
-
-                <!-- Second Mockup with Title -->
                 <div class="flex flex-col items-center text-center">
-                    <h3 class="text-xl text-gray-700 mb-4">Show Cambodian note values in your currency.</h3>
-                     <div class="iphone-mockup w-64 h-auto">
-                        <div class="iphone-camera"></div>
+                    <div class="h-24 flex items-center justify-center mb-6 px-4">
+                        <h3 class="text-lg text-gray-700 font-medium leading-relaxed">Show Cambodian note values in your
+                            currency</h3>
+                    </div>
+                    <div class="iphone-mockup max-w-[240px]">
                         <div class="iphone-screen">
-                            <img src="screenshots/note_values_screenshot_alt_a.png" alt="Easy Input Screenshot" class="iphone-screenshot">
+                            <img src="screenshots/note_values_screenshot_alt_a.png" alt="Easy Input Screenshot"
+                                class="iphone-screenshot">
                         </div>
                     </div>
                 </div>
 
-                
-    
-                <!-- third Mockup -->
+                <!-- Third Mockup -->
                 <div class="flex flex-col items-center text-center">
-                    <h3 class="text-xl text-gray-700 mb-4">Choose from a list of popular travel currencies</h3>
-                    <div class="iphone-mockup w-64 h-auto">
-                        <div class="iphone-camera"></div>
-                        <div class="iphone-screen">
-                            <img src="screenshots/select_currency_screenshot_alt_a.png" alt="Currency Selection Screenshot" class="iphone-screenshot">
-                        </div>
+                    <div class="h-24 flex items-center justify-center mb-6 px-4">
+                        <h3 class="text-lg text-gray-700 font-medium leading-relaxed">Choose from a list of popular
+                            travel currencies</h3>
                     </div>
-                </div>
-    
-                <!-- fourth Mockup -->
-                <div class="flex flex-col items-center text-center">
-                    <h3 class="text-xl text-gray-700 mb-4">Select dark, light or system mode display</h3>
-                    <div class="iphone-mockup w-64 h-auto">
-                        <div class="iphone-camera"></div>
+                    <div class="iphone-mockup max-w-[240px]">
                         <div class="iphone-screen">
-                            <img src="screenshots/conversion_dark_screenshot_alt_a.png" alt="Dark Mode Screenshot" class="iphone-screenshot">
+                            <img src="screenshots/select_currency_screenshot_alt_a.png"
+                                alt="Currency Selection Screenshot" class="iphone-screenshot">
                         </div>
                     </div>
                 </div>
 
+                <!-- Fourth Mockup -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="h-24 flex items-center justify-center mb-6 px-4">
+                        <h3 class="text-lg text-gray-700 font-medium leading-relaxed">Select dark, light or system mode
+                            display</h3>
+                    </div>
+                    <div class="iphone-mockup max-w-[240px]">
+                        <div class="iphone-screen">
+                            <img src="screenshots/conversion_dark_screenshot_alt_a.png" alt="Dark Mode Screenshot"
+                                class="iphone-screenshot">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    
-        <!-- Privacy Policy Section -->
-        <section class="container max-w-4xl mx-auto mt-24 text-center" id="privacy-policy">
-            <h2 class="text-3xl font-bold text-center text-gray-600 mb-12">
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section class="bg-gray-50 py-24 px-6 border-t border-gray-200" id="privacy-policy">
+        <div class="container max-w-4xl mx-auto xl:max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
                 Privacy Policy
             </h2>
-            <div class="text-left max-w-4xl mx-auto privacy-policy">
-                <p><em>Last update: 22 November 2025</em></p>
-                <p>Thank you for using myBuddy (the "App"). Your privacy is important to us. This Privacy Policy explains what information we collect and how we use it.</p>
+            <div class="bg-white border text-left border-gray-100 rounded-2xl shadow-sm p-8 md:p-12 privacy-policy">
+                <p><em>Last update: 01 May 2026</em></p>
+                <p>Thank you for using myBuddy (the "App"). Your privacy is important to us. This Privacy Policy
+                    explains what information we collect and how we use it.</p>
                 <h3>1. Information We Collect</h3>
-                <p>We collect information to improve our product for our users. This information includes usage patterns, device model, operating system version, app version and crash reports. This information is collected anonymously. We do <strong>not</strong> collect information that can be used to identify you.</p>
+                <p>We collect information to improve our product for our users. This information includes usage
+                    patterns, device model, operating system version, app version and crash reports. This information is
+                    collected anonymously. We do <strong>not</strong> collect information that can be used to identify
+                    you.</p>
                 <h3>2. How We Use The Information</h3>
-                <p>We use&nbsp;<strong>Google's Firebase Analytics</strong>&nbsp;to help us understand how the App is used. This may include the screens or pages you view, and the currencies you select. The information we collect is used to improve the App’s performance and reliability, understand general usage patterns, and address technical issues.</p>
+                <p>We use&nbsp;<strong>Google's Firebase Analytics</strong>&nbsp;to help us understand how the App is
+                    used. This may include the screens or pages you view, and the currencies you select. The information
+                    we collect is used to improve the App’s performance and reliability, understand general usage
+                    patterns, and address technical issues.</p>
                 <h3>3. Crash Reports</h3>
-                <p>We use&nbsp;<strong>Google Firebase Crashlytics</strong>&nbsp;to help detect and fix technical issues. When a crash or error occurs, <strong>Firebase Crashlytics</strong> automatically collects diagnostic information such as:</p>
+                <p>We use&nbsp;<strong>Google Firebase Crashlytics</strong>&nbsp;to help detect and fix technical
+                    issues. When a crash or error occurs, <strong>Firebase Crashlytics</strong> automatically collects
+                    diagnostic information such as:</p>
                 <ul>
                     <li>Device model</li>
                     <li>Operating system version</li>
@@ -202,35 +330,48 @@
                 </ul>
                 <p>This helps us improve the App's performance and stability.</p>
                 <h3>4. Children’s Privacy</h3>
-                <p>Our App is <strong>not</strong> intended for children under 13. We do not knowingly collect personal information from children.</p>
+                <p>Our App is <strong>not</strong> intended for children under 13. We do not knowingly collect personal
+                    information from children.</p>
                 <h3>5. Third-Party Services</h3>
-                <p>The App uses the following third-party services, <strong>Google Firebase Analytics, Google Firebase Crashlytics, Google Cloud API</strong>.&nbsp; These services may collect information as described in their own privacy policies. We encourage you to review them:</p>
+                <p>The App uses the following third-party services, <strong>Google Firebase Analytics, Google Firebase
+                        Crashlytics, Google Cloud API</strong>.&nbsp; These services may collect information as
+                    described in their own privacy policies. We encourage you to review them:</p>
                 <ul>
-                    <li>Firebase Privacy:&nbsp;<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">https://firebase.google.com/support/privacy</a></li>
-                    <li>Google Cloud Privacy:&nbsp;<a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">https://cloud.google.com/terms/cloud-privacy-notice</a></li>
+                    <li>Firebase Privacy:&nbsp;<a href="https://firebase.google.com/support/privacy" target="_blank"
+                            rel="noopener noreferrer">https://firebase.google.com/support/privacy</a></li>
+                    <li>Google Cloud Privacy:&nbsp;<a href="https://cloud.google.com/terms/cloud-privacy-notice"
+                            target="_blank"
+                            rel="noopener noreferrer">https://cloud.google.com/terms/cloud-privacy-notice</a></li>
                 </ul>
                 <h3>6. Changes to This Privacy Policy</h3>
-                <p>We may update this Privacy Policy from time to time. Updates will be reflected by the "Last updated" date at the top of this page.</p>
+                <p>We may update this Privacy Policy from time to time. Updates will be reflected by the "Last updated"
+                    date at the top of this page.</p>
                 <h3>7. Contact Us</h3>
-                <p>If you have any questions about this Privacy Policy, please contact us at:&nbsp;<a id="contact-email"></a></p>
+                <p>If you have any questions about this Privacy Policy, please contact us at:&nbsp;<a
+                        id="contact-email"></a></p>
             </div>
-        </section>
-    
-        <script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center px-6">
+        <p>&copy; 2026 myBuddy Cambodia. All rights reserved.</p>
+    </footer>
+
+    <script>
             // Simple email obfuscation to protect from basic scrapers
-            (function() {
+            (function () {
                 var user = 'mangofoundry.dev';
                 var domain = 'gmail.com';
                 var emailLink = document.getElementById('contact-email');
                 var email = user + '@' + domain;
                 emailLink.setAttribute('href', 'mailto:' + email);
-                
+
                 var strong = document.createElement('strong');
                 strong.textContent = email;
                 emailLink.appendChild(strong);
             })();
-        </script>
-    </body>
-    </html>
+    </script>
+</body>
 
-
+</html>
